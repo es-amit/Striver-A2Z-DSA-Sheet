@@ -26,3 +26,23 @@ vector<int> levelOrder(Node *root)
     }
     return ans;
 }
+
+vector<int> reverseLevelOrder(Node *root)
+{
+    queue<Node*> q;
+    stack<int> st;
+    q.push(root);
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+        st.push(temp->data);
+        if(temp->right) q.push(temp->right);
+        if(temp->left) q.push(temp->left);
+    }
+    vector<int> ans;
+    while(!st.empty()){
+        ans.push_back(st.top());
+        st.pop();
+    }
+    return ans;
+}
