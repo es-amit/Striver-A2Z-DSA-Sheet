@@ -1,5 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+struct Job{
+    public:
+        int id;
+        int profit;
+        int dead;
+};
 static bool cmp(Job a, Job b)
 {
     return a.profit > b.profit;
